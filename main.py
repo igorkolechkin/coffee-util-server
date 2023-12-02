@@ -8,7 +8,6 @@ from routers.products import router as products_router
 from routers.storageQuantity import router as storage_quantity_router
 
 models.Base.metadata.create_all(bind=engine)
-
 app = FastAPI()
 
 # TODO
