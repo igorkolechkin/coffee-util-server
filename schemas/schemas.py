@@ -19,9 +19,19 @@ class Storage(StorageBase):
         from_attributes = True
 
 
+class StorageFull(Storage):
+    id: int
+    rent: int
+    communal: int
+    sim_card: int
+    employee_salaries: int
+    prosto_pay: int
+
+
 class ProductBase(BaseModel):
     name: str
     current_price: Decimal
+    to_storages: List[int]
 
 
 class ProductCreate(ProductBase):
@@ -52,6 +62,13 @@ class StorageQuantity(StorageQuantityBase):
 
     class Config:
         from_attributes = True
+
+
+class StorageQuantityData(BaseModel):
+    product_id: int
+    price: Decimal
+    count: int
+    date: str
 
 
 class ProductBaseData(BaseModel):

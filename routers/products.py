@@ -9,8 +9,8 @@ router = APIRouter()
 
 
 @router.get('/', response_model=List[schemas.Product])
-def read_products(db: Session = Depends(get_db), skip: int = 0, limit: int = 100):
-    products = get_products(db, skip, limit)
+def read_products(db: Session = Depends(get_db), storage_id: int | bool = False):
+    products = get_products(db, storage_id)
 
     if products is None:
         raise HTTPException(status_code=404, detail="Products not found")
