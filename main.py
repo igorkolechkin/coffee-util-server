@@ -6,6 +6,7 @@ from models import models
 from routers.storages import router as storages_router
 from routers.products import router as products_router
 from routers.storageQuantity import router as storage_quantity_router
+from routers.earnings import router as earnings_router
 
 models.Base.metadata.create_all(bind=engine)
 app = FastAPI()
@@ -32,4 +33,9 @@ app.include_router(
 app.include_router(
     router=storage_quantity_router,
     prefix='/storage_quantity'
+)
+
+app.include_router(
+    router=earnings_router,
+    prefix='/earnings'
 )

@@ -75,3 +75,14 @@ class ProductBaseData(BaseModel):
     id: int
     price: Decimal
     count: int
+
+
+class EarningsBase(BaseModel):
+    storage_id: int
+    cash: int
+    card: int
+    date: str
+
+
+class Earnings(EarningsBase):
+    id: int

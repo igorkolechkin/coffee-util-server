@@ -33,3 +33,13 @@ class StorageQuantity(Base):
     price = Column(Numeric)
     count = Column(Integer)
     date = Column(String)
+
+
+class Earnings(Base):
+    __tablename__ = 'earnings'
+
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+    storage_id = Column(Integer, ForeignKey('storages.id'))
+    cash = Column(Integer)
+    card = Column(Integer)
+    date = Column(String)
