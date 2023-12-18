@@ -29,7 +29,7 @@ def create_storage_quantity(db: Session, storage_quantity: schemas.StorageQuanti
     db_storage_quantity = models.StorageQuantity(**storage_quantity.model_dump())
 
     if db_storage_quantity.product_id == 10:
-        db_storage_quantity.count = db_storage_quantity.count * 20
+        db_storage_quantity.count = db_storage_quantity.count * 15
     elif db_storage_quantity.product_id == 11 or db_storage_quantity.product_id == 12:
         db_storage_quantity.count = db_storage_quantity.count * 50
 
